@@ -16,7 +16,7 @@ impl str::FromStr for Fib64 {
     type Err = ParseFib64Error;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        if s.len() == 0 {
+        if s.is_empty() {
             return Err(ParseFib64Error::Empty);
         }
 

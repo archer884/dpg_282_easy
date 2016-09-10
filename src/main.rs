@@ -1,5 +1,8 @@
 // https://www.reddit.com/r/dailyprogrammer/comments/5196fi/20160905_challenge_282_easy_unusual_bases/
 
+#![cfg_attr(feature="clippy", feature(plugin))]
+#![cfg_attr(feature="clippy", plugin(clippy))]
+
 extern crate grabinput;
 
 mod bits;
@@ -13,14 +16,14 @@ fn main() {
         let mut parts = line.split_whitespace();
 
         match (parts.next(), parts.next()) {
-            (Some("10"), Some(ref value)) => {
+            (Some("10"), Some(value)) => {
                 match convert_decimal(value) {
                     None => println!("bad input: {}", value),
                     Some(value) => println!("{}", value),
                 }
             }
 
-            (Some("F"), Some(ref value)) => {
+            (Some("F"), Some(value)) => {
                 match convert_fib(value) {
                     None => println!("bad input: {}", value),
                     Some(value) => println!("{}", value),
